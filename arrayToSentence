@@ -1,0 +1,22 @@
+/* groceries function returns a string with each item separated by a comma except the last two items that should be separated by the word 'and'.
+*/
+
+function groceries (arr) {
+  if (arr.length === 1) {
+    return arr[0].item;
+  } 
+  else {
+    let str=arr[0].item;
+    
+    for (let i=1; i<arr.length-1; i++){
+      str=str.concat(', ', arr[i].item);
+    }
+    
+    str = str.concat(' and ', arr[arr.length-1].item)
+    console.log(str);
+    return str;
+  }
+}
+
+groceries( [{item: 'Bread'}, {item: 'Butter'}] ); // returns Bread and Butter
+groceries( [{item: 'Carrots'}, {item: 'Hummus'}, {item: 'Pesto'}, {item: 'Rigatoni'}] ); //returns Carrots, Hummus, Pesto and Rigatoni
